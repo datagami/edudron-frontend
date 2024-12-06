@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script defer src="https://social-med-backend-node.herokuapp.com/socket.io/socket.io.js"></script>
+    <script defer src="client.js"></script>
+ </head>
+
+<body>
+    
+
+
+    <h1>Client</h1>
+    <form id="IdForm" action="">
+        <input type="text" style="border: 1px solid red;"  name="userID">
+        <button id="joinSocket">Join</button>
+    </form>
+    <form id="msgForm" action="">
+        <input type="text" name="msg">
+        <button>Send</button>
+    </form>
+    <div id="messages">
+
+    </div>
+
+    
+</body>
+
+</html>

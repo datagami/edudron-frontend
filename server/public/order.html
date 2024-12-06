@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+   
+</head>
+
+<body>
+    <button id="rzp-button1">Pay</button>
+
+
+
+
+
+    <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+    <script>
+
+
+document.getElementById('rzp-button1').onclick = async function (e) {
+    e.preventDefault();
+
+    let order = await fetch('http://localhost:8000/api/createpayment', {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+            amount: 500
+
+        })
+    })
+    let orderData = await order.json()
+    console.log(orderData)
+    var options = {
+        "key": "rzp_test_LyVZxCMGmjKGmq", 
+        "amount": orderData.amount,
+        "currency": "INR",
+
+        "order_id": orderData.order.id,
+        "handler":async function (response) {
+            // here will post again with user.id and the response that payment is success
+            let order = await fetch('http://localhost:8000/api/successpayment', {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify({
+                    memberId:"62e50e29adb262e58ad1f920",
+                    amount: orderData.amount,
+                    paymentId:response.razorpay_payment_id,
+                    orderId:response.razorpay_order_id,
+                    signature:response.razorpay_signature,
+        
+                })
+            })
+            alert(response.razorpay_payment_id);
+            alert(response.razorpay_order_id);
+            alert(response.razorpay_signature)
+        },
+
+    };
+    var rzp1 = new Razorpay(options);
+    rzp1.open();
+}
+
+    </script>
+
+</body>
+
+</html>

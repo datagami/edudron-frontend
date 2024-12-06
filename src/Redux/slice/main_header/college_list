@@ -1,0 +1,20 @@
+import { createSlice } from '@reduxjs/toolkit'
+
+const initialState = {
+  value: [],
+}
+
+export const collegeList = createSlice({
+  name: 'counter',
+  initialState,
+  reducers: {
+    college_list: (state, action) => {
+      state.value = action.payload
+    },
+  },
+})
+
+// Action creators are generated for each case reducer function
+export const {  college_list } = collegeList.actions
+
+export default collegeList.reducer

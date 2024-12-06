@@ -1,0 +1,265 @@
+/*appna css code*/
+.logo-title {
+    margin-left: 10px;
+    font-size: 28px;
+    font-family: 'Poppins', sans-serif;
+    line-height: 45px;
+    color: var(--iq-title-text);
+}
+
+/*-----------------------------------------------------------------
+                        Right Sidebar Menu
+------------------------------------------------------------------- */
+#right-sidebar-scrollbar {
+    height: 100vh;
+}
+
+.iq-sidebar-right-menu {
+    position: fixed;
+    top: 75px;
+    right: -400px;
+    width: 360px;
+    background: var(--iq-border-light);
+    overflow: hidden;
+    z-index: 99;
+    -webkit-transition: all 0.5s ease-out 0s;
+    -moz-transition: all 0.5s ease-out 0s;
+    -ms-transition: all 0.5s ease-out 0s;
+    -o-transition: all 0.5s ease-out 0s;
+    transition: all 0.5s ease-out 0s;
+}
+
+.iq-sidebar-right-menu.film-side {
+    right: 0;
+}
+
+.iq-sidebar-booking,
+.iq-sidebar-payment {
+    padding: 30px;
+}
+
+.iq-booking-ticket {
+    background: var(--iq-white);
+    border-radius: 4px;
+    padding: 30px 25px 30px;
+    position: relative;
+}
+
+.iq-booking-ticket:after {
+    content: "";
+    position: absolute;
+    bottom: 100px;
+    left: -10px;
+    height: 20px;
+    width: 20px;
+    background: var(--iq-primary);
+    -webkit-border-radius: 90px;
+    -moz-border-radius: 90px;
+    border-radius: 90px;
+}
+
+.iq-booking-ticket:before {
+    content: "";
+    position: absolute;
+    bottom: 100px;
+    right: -10px;
+    height: 20px;
+    width: 20px;
+    background: var(--iq-primary);
+    -webkit-border-radius: 90px;
+    -moz-border-radius: 90px;
+    border-radius: 90px;
+}
+
+/* right sidebar */
+.iq-right-fixed {
+    margin: 0 15px;
+}
+
+.right-sidebar-mini {
+    top: 57px;
+    z-index: 9;
+    position: fixed;
+    width: 260px;
+    right: 0;
+    transform: translateX(calc(111% + -2em));
+    transition: all 0.5s ease;
+}
+
+.right-sidebar-mini.right-pd {
+    right: 140px;
+}
+
+/*.right-sidebar-mini .side-left-icon { display: none; }*/
+.right-sidebar-toggle {
+    position: absolute;
+    margin-left: -47px;
+    background: var(--iq-white);
+    padding: 15px;
+    display: inline;
+    top: 0;
+    z-index: 99;
+    border-radius: 30px 0px 0px 30px;
+    box-shadow: -10px 5px 20px rgba(0, 0, 0, 0.19);
+    cursor: pointer;
+}
+
+.right-sidebar-panel {
+    background-color: #fff;
+    box-shadow: 0px 0px 25px 0px rgba(45, 69, 95, 0.1);
+    height: 91vh;
+    padding: 15px;
+    overflow-y: scroll;
+}
+
+.right-sidebar {
+    transform: translateX(calc(10% + -1em));
+}
+
+.right-sidebar .side-right-icon {
+    display: none;
+}
+
+.right-sidebar .side-left-icon {
+    display: block;
+}
+
+.right-sidebar-toggle span {
+    display: none !important;
+}
+
+/*---------------------------------------------------------------------
+                                  Profile-Avatar
+-----------------------------------------------------------------------*/
+.iq-profile-avatar {
+    position: relative;
+}
+
+.iq-profile-avatar:before {
+    content: '';
+    position: absolute;
+    border-radius: 100%;
+    z-index: 1;
+    border: 2px solid #fff;
+    background-color: green;
+    height: 16px;
+    width: 16px;
+    right: 0;
+    bottom: 8px;
+}
+
+i.fa.side-left-icon {
+    color: #fff;
+    font-size: 22px;
+    position: relative;
+    top: -2px;
+}
+
+.iq-profile-avatar.status-online:before {
+    background-color: #43d424;
+}
+
+.iq-profile-avatar.status-away:before {
+    background-color: red;
+}
+
+.avatar-upload {
+    position: relative;
+    max-width: 205px;
+    margin: 15px 0 0;
+}
+
+.avatar-upload .avatar-edit {
+    position: absolute;
+    right: 12px;
+    z-index: 1;
+    top: 10px;
+}
+
+.avatar-upload .avatar-edit input {
+    display: none;
+}
+
+.avatar-upload .avatar-edit input+label {
+    display: inline-block;
+    width: 34px;
+    height: 34px;
+    margin-bottom: 0;
+    border-radius: 100%;
+    background: var(--iq-white);
+    border: 1px solid var(--iq-body-text);
+    box-shadow: 0px 0px 20px 0px rgba(44, 101, 144, 0.1);
+    cursor: pointer;
+    font-weight: normal;
+    transition: all 0.2s ease-in-out;
+}
+
+.avatar-upload .avatar-edit input+label:hover {
+    background: var(--iq-border-light);
+    border-color: var(--iq-secondary);
+}
+
+.avatar-upload .avatar-edit input+label:after {
+    content: "\f040";
+    font-family: "FontAwesome";
+    color: var(--iq-body-text);
+    position: absolute;
+    top: 6px;
+    left: 0;
+    right: 0;
+    text-align: center;
+    margin: auto;
+}
+
+.avatar-upload .avatar-preview {
+    width: 192px;
+    height: 192px;
+    position: relative;
+    border-radius: 100%;
+    border: 6px solid var(--iq-border-light);
+    box-shadow: 0px 0px 20px 0px rgba(44, 101, 144, 0.1);
+}
+
+.avatar-upload .avatar-preview>div {
+    width: 100%;
+    height: 100%;
+    border-radius: 100%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.rounded-circle {
+    border-radius: 50% !important;
+}
+
+i.fa.fa-angle-left.side-right-icon {
+    font-size: 22px;
+    color: #fff;
+    position: relative;
+    top: -2px;
+}
+
+@media (min-width: 1300px) and (max-width: 1499px) {
+    .right-sidebar-mini {
+        transform: translateX(calc(120% + -8em));
+    }
+
+    .right-sidebar {
+        transform: translateX(calc(10% + -1em));
+    }
+}
+
+.right-sidebar-toggle.bg-primary.mt-3 {
+    background: #6ba4e9;
+    height: 50px;
+    width: 48px;
+}
+
+
+
+
+
+
+
+

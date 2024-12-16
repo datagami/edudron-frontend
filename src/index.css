@@ -193,5 +193,45 @@
 
 /* course card css start */
 .course-card {
+  border-radius: 10px;
+  margin-bottom: 16px;
+  border: 1px solid #ddd;
+}
+.course-card .course-card-top {
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 10px;
+  margin-bottom: 10px;
+}
+.course-card .course-card-top h5 {
+  font-weight: 600;
+  cursor: pointer;
+}
+.course-card .course-card-point p {
+  font-size: 14px;
+  color: #8a8a8a;
+}
+.course-card .course-card-point span {
+  font-weight: 500;
+}
+.my-btn-cus {
+  text-decoration: none;
+  padding: 5px 20px;
+  border-radius: 30px;
+  border: none;
+  transition: 0.3s all ease-in-out;
+  background-color: #2ba45f;
+  color: #fff;
+}
+.my-btn-cus:hover {
+  background-color: #1c854a;
+}
+.course-details {
+  border-radius: 10px;
+  border: 1px solid #ddd;
+  padding: 16px;
+}
+.course-details .head{
+  padding-bottom: 8px;
+  border-bottom: 1px solid #ddd;
 }
 /* course card css end   */

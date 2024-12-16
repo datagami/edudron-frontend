@@ -29,17 +29,47 @@ const CourseInfo = ({ courseInfo, id }) => {
       ></div>
 
       <div className="white_box">
-        <div className="col-md-8">
-          <div className="course-card">
-            <div className="border-bottom-1 shadow rounded-md p-3">
-              <h5>Master of Technology [M.Tech] </h5>
-              <span>2 Year</span>
-              <span>Full Time</span>
-            </div>
-            <div>
-              <div className="">
-                <p>Total Tuition Fees</p>
-                <span>₹8 L Get Fee Details</span>
+        <div className="row">
+          <div className="col-md-8">
+            {courseList?.map((item) => (
+              <div className="course-card p-3">
+                <div className="course-card-top">
+                  <h5 className="mb-0 ">{item?.courseName}</h5>
+                  <span>{item?.duration}</span>
+                </div>
+                <div className="row">
+                  <div className="col-5">
+                    <div className="course-card-point">
+                      <p className="mb-0">Total Tuition Fees</p>
+                      <span>{item?.tuitionFees}</span>
+                    </div>
+                  </div>
+                  <div className="col-5">
+                    <div className="course-card-point">
+                      <p className="mb-0">Total Tuition Fees</p>
+                      <span>{item?.eligibility}</span>
+                    </div>
+                  </div>
+                  <div className="col-2">
+                    <button className="my-btn-cus">Brochure</button>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+          <div className="col-md-4">
+            <div className="course-details">
+              <div className="head">
+                <h5 className="mb-0">
+                  B.Tech. in Computer Science and Engineering
+                </h5>
+                <small>3 Year</small>
+              </div>
+              <div className="mt-3">
+                <ul>
+                  <li>Computer Science and Engineering</li>
+                  <li>Electrcal and Engineering</li>
+                </ul>
               </div>
             </div>
           </div>

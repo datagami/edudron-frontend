@@ -50,7 +50,7 @@ const Top_Sub_Header = () => {
   console.log(loginStatus);
   const dispatch = useDispatch();
   const localStorage_login = JSON.parse(localStorage.getItem("login_result"));
-  const navigate=useNavigate()
+  const navigate = useNavigate();
   // console.log(localStorage_login);
   // const user={
   //   _id:localStorage_login?._id,
@@ -71,6 +71,8 @@ const Top_Sub_Header = () => {
   const [country, setCountry] = useState([]);
   const [state, setState] = useState([]);
   const [city, setCity] = useState([]);
+
+  console.log("country", country);
 
   const [countryId, setCountryId] = useState("");
   const [stateId, setStateId] = useState("");
@@ -384,15 +386,15 @@ const Top_Sub_Header = () => {
     get_Country();
   }, []);
 
-  const handlePost=()=>{
+  const handlePost = () => {
     // console.log(localStorage_login.status,"388")
-    if(localStorage_login?.status==true){
-      navigate("/post")
-      console.log("it is true")
-    }else{
-      SignuphandleShow()
+    if (localStorage_login?.status == true) {
+      navigate("/post");
+      console.log("it is true");
+    } else {
+      SignuphandleShow();
     }
-  }
+  };
 
   return (
     <>
@@ -467,7 +469,11 @@ const Top_Sub_Header = () => {
                       </NavLink>
                     </>
                   )}
-                  <NavLink to={localStorage_login?.status ? `/post` : "/"} onClick={handlePost}  className="post_btn" >
+                  <NavLink
+                    to={localStorage_login?.status ? `/post` : "/"}
+                    onClick={handlePost}
+                    className="post_btn"
+                  >
                     Post
                   </NavLink>
                 </div>

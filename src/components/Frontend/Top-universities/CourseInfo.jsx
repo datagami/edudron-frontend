@@ -11,6 +11,7 @@ import { getCourseService } from "../../../services/APIServices";
 const CourseInfo = ({ courseInfo, id }) => {
   const college_id = useSelector((state) => state.getCollegeSlice.value);
   const [courseList, setCourseList] = useState([]);
+  const [activeCourse, setActiveCourse] = useState(0);
 
   useEffect(() => {
     (async () => {
@@ -31,10 +32,17 @@ const CourseInfo = ({ courseInfo, id }) => {
       <div className="white_box">
         <div className="row">
           <div className="col-md-8">
-            {courseList?.map((item) => (
+            {courseList?.map((item, index) => (
               <div className="course-card p-3">
                 <div className="course-card-top">
-                  <h5 className="mb-0 ">{item?.courseName}</h5>
+                  <h5
+                    className="mb-0 "
+                    onClick={() => {
+                      setActiveCourse(index);
+                    }}
+                  >
+                    {item?.courseName}
+                  </h5>
                   <span>{item?.duration}</span>
                 </div>
                 <div className="row">
@@ -61,14 +69,18 @@ const CourseInfo = ({ courseInfo, id }) => {
             <div className="course-details">
               <div className="head">
                 <h5 className="mb-0">
-                  B.Tech. in Computer Science and Engineering
+                  {courseList?.[activeCourse]?.courseName}
+                  {/* B.Tech. in Computer Science and Engineering */}
                 </h5>
                 <small>3 Year</small>
               </div>
               <div className="mt-3">
                 <ul>
-                  <li>Computer Science and Engineering</li>
-                  <li>Electrcal and Engineering</li>
+                  {courseList?.[activeCourse]?.branch?.map((item) => (
+                    <li key={item?._id}>{item?.name}</li>
+                  ))}
+                  {/* <li>Computer Science and Engineering</li>
+                  <li>Electrcal and Engineering</li> */}
                 </ul>
               </div>
             </div>

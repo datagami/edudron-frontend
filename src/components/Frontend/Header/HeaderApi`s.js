@@ -4,6 +4,8 @@ const auth = JSON.parse(localStorage.getItem("login_result"));
 export const BASE_API_URL = process.env.REACT_APPBASE_API_URL;
 export const BASE_URL_IMAGE = process.env.REACT_APP_IMAGE_BASE_URL;
 
+console.log(BASE_API_URL);
+console.log(BASE_URL_IMAGE);
 export const api_instance = axios.create({
   baseURL: BASE_API_URL,
   headers: {

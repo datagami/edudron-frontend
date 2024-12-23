@@ -78,7 +78,8 @@ import ErrorHandler from "./components/ErrorHandler";
 import WriteReview from "./components/Frontend/WriteReview";
 import Term from "./components/Frontend/Term";
 import CollageDetails from "./components/Frontend/Top-universities/CollageDetails";
-export const socket = socketIO.connect("http://localhost:5000");
+import {BASE_API_URL} from "./components/Frontend/Header/HeaderApi`s";
+export const socket = socketIO.connect(BASE_API_URL);
 export let backgound_notification;
 
 function CollegeHome() {

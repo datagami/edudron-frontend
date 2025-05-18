@@ -33,4 +33,4 @@ yarn-error.log*
 /.env.example
 /.env.production
 /.github/workflows/azure-static-web-apps.yml
-/staticwebapp.config.json
+# /staticwebapp.config.json

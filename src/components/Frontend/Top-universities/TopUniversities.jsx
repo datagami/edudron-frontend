@@ -640,7 +640,7 @@ const TopUniversities = () => {
                               </NavLink>
                             </button>
                             <Link
-                              // href={`/collage-details/${item?._id}`}
+                              to={`/collage-details/${item?._id}`}
                               target="_blank"
                             >
                               <button className="details">More Details</button>

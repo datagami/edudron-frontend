@@ -38,7 +38,7 @@ const TopUniversities = () => {
   const searchby = useSelector((state) => state.searchCollegeSlice.value);
   const college_by_id = useSelector((state) => state.getCollegeSlice.value);
   const [checked, setChecked] = useState("");
-  // console.log(college_by_id)
+  console.log("college_by_id", college_by_id);
   const user_data = JSON.parse(localStorage.getItem("login_result"));
   //=========================addmission query========================================================
 
@@ -632,8 +632,8 @@ const TopUniversities = () => {
                               <NavLink
                                 to="#"
                                 onClick={() => {
-                                  // handleShow();
-                                  // getCollege_id(item._id);
+                                  handleShow();
+                                  getCollege_id(item._id);
                                 }}
                               >
                                 Apply Now

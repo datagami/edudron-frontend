@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import logo from "./logo.png";
 
 import Home from "./components/dashboard/Home";
-import {BrowserRouter, Routes, Route, HashRouter} from "react-router-dom";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Profile from "./components/dashboard/Profile";
 import Main from "./components/dashboard/Main";
 import Users from "./components/dashboard/UsersList";
@@ -81,7 +81,6 @@ import CollageDetails from "./components/Frontend/Top-universities/CollageDetail
 import {BASE_API_URL} from "./components/Frontend/Header/HeaderApi`s";
 export const socket = socketIO.connect(BASE_API_URL);
 export let backgound_notification;
-
 
 function CollegeHome() {
   return (
@@ -179,7 +178,7 @@ function App() {
 
   //========================firebase notification ends
   return (
-    <HashRouter>
+    <div>
       {/* <AddCollege/> */}
       {/* <Frontend /> */}
       {/* <Social_home /> */}
@@ -381,7 +380,7 @@ function App() {
       />
 
       <ToastContainer />
-    </HashRouter>
+    </div>
   );
 }
 

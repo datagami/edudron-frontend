@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import logo from "./logo.png";
 
 import Home from "./components/dashboard/Home";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import {BrowserRouter, Routes, Route, HashRouter} from "react-router-dom";
 import Profile from "./components/dashboard/Profile";
 import Main from "./components/dashboard/Main";
 import Users from "./components/dashboard/UsersList";
@@ -178,7 +178,7 @@ function App() {
 
   //========================firebase notification ends
   return (
-    <div>
+    <HashRouter>
       {/* <AddCollege/> */}
       {/* <Frontend /> */}
       {/* <Social_home /> */}
@@ -380,7 +380,7 @@ function App() {
       />
 
       <ToastContainer />
-    </div>
+    </HashRouter>
   );
 }
 
